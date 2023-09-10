@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { MenubarModule } from 'primeng/menubar';
 // import { MenuModule } from 'primeng/menu';
-
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { FieldsetModule } from 'primeng/fieldset';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [],
@@ -11,7 +14,12 @@ import { MenubarModule } from 'primeng/menubar';
     CommonModule,
   ],
   exports:[
-    MenubarModule
+   // MenuModule,
+   ButtonModule,
+   CardModule,
+   FieldsetModule,
+   MenubarModule,
+   PanelModule,
   ]
 })
 export class PrimeNgModule { }
