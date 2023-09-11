@@ -3,9 +3,7 @@ import { Color, Hero } from '../../interfaces/hero.interface';
 
 @Component({
   selector: 'products-order',
-  templateUrl: './order.component.html',
-  styles: [
-  ]
+  templateUrl: './order.component.html'
 })
 export class OrderComponent {
 

@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'basic-pages',
-  templateUrl: './basic-pages.component.html',
-  styleUrls: ['./basic-pages.component.css']
+  templateUrl: './basic-pages.component.html'
 })
 export class BasicPagesComponent {
 
