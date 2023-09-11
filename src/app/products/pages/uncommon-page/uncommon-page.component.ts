@@ -2,38 +2,27 @@ import { Component } from '@angular/core';
 import { interval, Observable, tap } from 'rxjs';
 
 @Component({
-  selector: 'uncommon-page',
+  selector: 'app-uncommon-page',
   templateUrl: './uncommon-page.component.html',
   styleUrls: ['./uncommon-page.component.css']
 })
-
-
 export class UncommonPageComponent {
 
-
   // i18n Select
-
-  public estadoName: boolean = true;
-
-  public name: string = 'Camilo';
-  public name1: string = this.name;
-  public name2: string = 'Carolina';
-  public gender: 'Masculino'|'Femenino' = 'Masculino';
+  public name: string = 'Fernando';
+  public gender: 'male'|'female' = 'male';
   public invitationMap = {
-    Masculino: 'invitarlo',
-    Femenino: 'invitarla'
+    male: 'invitarlo',
+    female: 'invitarla'
   }
 
-  changeClient(miEstado:boolean):void {
-
-    this.name = miEstado ? this.name2 : this.name1;
-    this.gender = miEstado ? 'Femenino' : 'Masculino';
-    this.estadoName = !miEstado;
-
+  changeClient():void {
+    this.name = 'Melissa';
+    this.gender = 'female';
   }
 
   // i18nPlural
-  public clients: string[] = ['Camilo','Maria','Fernando', 'Hernando', 'Eduardo', 'Melissa', 'Natalia'];
+  public clients: string[] = ['Maria','Pedro','Fernando', 'Hernando', 'Eduardo', 'Melissa', 'Natalia'];
   public clientsMap = {
     '=0': 'no tenemos ningún cliente esperando.',
     '=1': 'tenemos un cliente esperando.',
@@ -47,22 +36,25 @@ export class UncommonPageComponent {
 
   // KeyValue Pipe
   public person = {
-    name: 'Camilo',
+    name: 'Fernando',
     age: 36,
-    address: 'La Calera, Colombia',
+    address: 'Ottawa, Canada',
   }
 
   // Async Pipe
-  public myObservableTimer: Observable<number> = interval(800).pipe(
+  public myObservableTimer: Observable<number> = interval(2000).pipe(
     tap( value => console.log('tap:', value ) ),
   );
 
   public promiseValue: Promise<string> = new Promise( (resolve, reject) => {
     setTimeout(() => {
       resolve( 'Tenemos data en la promesa.' );
-      //console.log( 'Tenemos data en la promesa.' );
-      this.person.name = this.name2
+      console.log( 'Tenemos data en la promesa.' );
+      this.person.name = 'Otro nombre'
     }, 3500);
   })
+
+
+
 
 }
